@@ -1,0 +1,21 @@
+PROJECT: Game Wiki Page
+
+Project Description: The game dark souls can be very difficult and usually does not have a lot of guidance for the playyers. There are a lot of items, places, NPCs, quests, ect. Making sense of all of them can be very difficult at times. Sometimes the players need some guidance for things like how to use an item, where to go next, or how to interact with a character. Creating a wiki can allow players to find and share helpful informationfor the game
+
+Project Requirements:
+Pages:
+  Homepage
+  About Page
+  NPC Page
+  Item Page
+  Weapon Page 
+  Armour Page
+  Enemy Page
+  Chat Pages
+Features:
+  Ability for users to generate pages
+  Ability to search pages
+  Chat Rooms 
+  Ability to comment on pages
+  Gear analytics/build creator
+  Ability to rate items
