@@ -37,12 +37,13 @@ router.get('/:slug', async (req, res) => {
     res.render('articles/show', {article: article})
 })
 
-//Slug for npc article (Maybe change)
+//Slug for npc article (Maybe change) 
 router.get('/npcs/:slug', async (req, res) => {
+    //ERROR HERE
     const npcArticle = await npcArticle.findOne( {slug: req.params.slug})
-    if (npcArticle == null) res.redirect('/')
+    if (npcArticle == null) res.redirect('/npcs')
     res.render('articles/npcShow', {npcArticle: npcArticle})
-}) //http://localhost:5000/articles/npcs/test-420
+}) 
 
 //Post for article
 router.post('/', async (req, res, next) => {

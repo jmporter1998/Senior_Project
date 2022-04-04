@@ -21,16 +21,18 @@ app.get('/', async (req,res) => {
     })
 })
 
+
+//Is this unecassary?
 // Gets the npc home page to render
 app.get('/npcs', async (req,res) => {
-    const npcArticles = [{
+    /*const npcArticles = [{
         title: 'NPC Test',
         createdAt: Date.now(),
         Description: 'test description',
         markdown: 'Test'
-    }]
+    }]*/
 
-    //const npcArticles = await npcArticle.find().sort({createdAt: 'descending'})
+    const npcArticles = await npcArticle.find().sort({createdAt: 'descending'})
 
     res.render('articles/npcs', {npcArticles: npcArticles
     })
