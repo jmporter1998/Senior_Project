@@ -12,7 +12,19 @@
         <h1 class="mb-4">NPC Articles</h1>
         <a href="/articles/newNPC" class="btn btn-success">New NPC Article</a>
         
-        
+        <% npcArticle.forEach(npcArticle => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                   <h4 class="card-title"><%= npcArticle.title %></h4>
+                   <div class="card-subtitle text-muted mb-2" ><%= npcArticle.createdAt.toLocaleDateString() %></div>
+                   <div class="card-text mb-2" ><%= npcArticle.description %></div>
+                   <a href="articles/npcs/<%= npcArticle.slug %>" class="btn btn-primary">Read Page</a>
+                   <form action="/articles/npcs/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                       <button type="submit" class="btn btn-danger">Delete</button>
+                   </form>
+                </div>
+            </div>
+        <% }) %>
         
 
 

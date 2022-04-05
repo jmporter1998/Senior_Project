@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
-const npcArticle = require('./models/npcArticle')
+const NpcArticle = require('./models/npcArticle')
 const npcArticleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 const app = express()
@@ -22,17 +22,11 @@ app.get('/', async (req,res) => {
 })
 
 
-//Is this unecassary?
+//This is where it should be defined?? Isn't Working for some reason
 // Gets the npc home page to render
 app.get('/npcs', async (req,res) => {
-    /*const npcArticles = [{
-        title: 'NPC Test',
-        createdAt: Date.now(),
-        Description: 'test description',
-        markdown: 'Test'
-    }]*/
 
-    const npcArticles = await npcArticle.find().sort({createdAt: 'descending'})
+    const npcArticles = await NpcArticle.find().sort({createdAt: 'descending'})
 
     res.render('articles/npcs', {npcArticles: npcArticles
     })
@@ -40,6 +34,7 @@ app.get('/npcs', async (req,res) => {
 
 app.use('/articles', articleRouter)
 
+//unecesarry???
 app.use('/articles', npcArticleRouter)
 
 
