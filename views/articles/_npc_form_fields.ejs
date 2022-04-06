@@ -1,12 +1,40 @@
 <div class="form-group">
-    <label for="title">Title</label>
+    <label for="title">NPC Name</label>
     <input required value="<%= npcArticle.title%>" type="text" name="title" id="title" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="title">NPC Picture Link</label>
+    <input required value="<%= npcArticle.picture%>" type="text" name="picture" id="picture" class="form-control">
 </div>
 
 <div class="form-group">
     <label for="description">Dscription</label>
     <textarea required name="description" id="description" class="form-control"><%= npcArticle.description%></textarea>
 </div>
+
+<div class="form-group">
+    <label for="description">Questline</label>
+    <textarea required name="questline" id="questline" class="form-control"><%= npcArticle.questline%></textarea>
+</div>
+
+<!-- Inventory for sale here in a dynamic table?? -->
+
+<!-- Dropshere in a dynamic table?? -->
+
+<div class="form-group">
+    <label for="description">Armour Set</label>
+    <textarea required name="armour" id="armouot" class="form-control"><%= npcArticle.armour%></textarea>
+</div>
+
+<div class="form-group">
+    <label for="description">Weapon</label>
+    <textarea required name="armour" id="armouot" class="form-control"><%= npcArticle.armour%></textarea>
+</div>
+
+<!-- Spells in a dynamic table -->
+
+
 
 <div class="form-group">
     <label for="markdown">Markown</label>

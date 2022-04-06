@@ -1,6 +1,8 @@
 const express = require('express')
 const Article = require('./../models/article')
 const NpcArticle = require('./../models/npcArticle')
+const weaponArticle = require('./../models/weaponArticle')
+const WeaponArticle = require('./../models/weaponArticle')
 const router = express.Router()
 
 //Get for new article
@@ -13,10 +15,20 @@ router.get('/newNPC', (req, res) => {
     res.render('articles/newNPC', {npcArticle: new NpcArticle()})
 })
 
+// Get for new Weapon page
+router.get('/newWeapon', (req, res) => {
+    res.render('articles/newWeapon', {weaponArticle: new WeaponArticle()})
+})
+
 //Is this the problem???
 // Get for npc home
 router.get('/npcs', (req, res) => {
     res.render('articles/npcs', {npcArticle: NpcArticle})
+})
+
+// Get for weapon home
+router.get('/weapons', (req, res) => {
+    res.render('articles/weapons', {weaponArticle: WeaponArticle})
 })
 
 //Edit for article
@@ -29,6 +41,12 @@ router.get('/edit/:id', async (req, res) => {
 router.get('/npcEdit/:id', async (req, res) => {
     const npcArticle = await NpcArticle.findById(req.params.id)
     res.render('articles/npcEdit', {npcArticle: npcArticle})
+})
+
+//Edit for weapon article
+router.get('/weaponEdit/:id', async (req, res) => {
+    const weaponArticle = await WeaponArticle.findById(req.params.id)
+    res.render('articles/weaponEdit', {weaponArticle: weaponArticle})
 })
 
 //Slug for article
@@ -46,6 +64,14 @@ router.get('/npcs/:slug', async (req, res) => {
     res.render('articles/npcShow', {npcArticle: npcArticle})
 }) 
 
+//Slug for weapon article (Maybe change) 
+router.get('/weapons/:slug', async (req, res) => {
+    //ERROR HERE
+    const weaponArticle = await WeaponArticle.findOne( {slug: req.params.slug})
+    if (weaponArticle == null) res.redirect('/npcs')
+    res.render('articles/weaponShow', {npcArticle: npcArticle})
+}) 
+
 //Post for article
 router.post('/', async (req, res, next) => {
     req.article = new Article()
@@ -57,6 +83,12 @@ router.post('/npcs', async (req, res, next) => {
     req.npcArticle = new NpcArticle()
     next()
 }, saveArticleAndRedirectNPC('newNPC')) 
+
+//Post for weapon article
+router.post('/weapons', async (req, res, next) => {
+    req.weaponArticle = new WeaponArticle()
+    next()
+}, saveArticleAndRedirectWeapon('newWeapon')) 
 
 //Edit Article
 router.put('/:id', async (req, res, next) => {
@@ -71,6 +103,11 @@ router.put('/npcs/:id', async (req, res, next) => {
     next()
 }, saveArticleAndRedirectNPC('npcEdit'))
 
+//Edit weapon article
+router.put('/weapons/:id', async (req, res, next) => {
+    req.weaponArticle = await WeaponArticle.findById(req.params.id)
+    next()
+}, saveArticleAndRedirectWeapon('weaponEdit'))
 
 router.delete('/:id', async (req, res) => {
     await Article.findByIdAndDelete(req.params.id)
@@ -93,7 +130,6 @@ function saveArticleAndRedirect(path){
 }
 
 
-//Need to play with the /articles?
 function saveArticleAndRedirectNPC(path){
     return async (req, res) => {
         let npcArticle = req.npcArticle
@@ -105,6 +141,20 @@ function saveArticleAndRedirectNPC(path){
             res.redirect(`/articles/npcs/${npcArticle.slug}`)
         }catch(e){
             res.render('articles/npcs/${path}', {npcArticle: npcArticle})
+        }
+    }
+}
+
+function saveArticleAndRedirectWeapon(path){
+    return async (req, res) => {
+        let weaponArticle = req.weaponArticle
+        weaponArticle.title = req.body.title
+        weaponArticle.description = req.body.description
+        try{
+            weaponArticle = await weaponArticle.save()
+            res.redirect(`/articles/weapons/${weaponArticle.slug}`)
+        }catch(e){
+            res.render('articles/weapons/${path}', {weaponArticle: weaponArticle})
         }
     }
 }

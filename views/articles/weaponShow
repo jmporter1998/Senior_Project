@@ -9,11 +9,15 @@
 </head>
 <body>
     <div class="container" style="float:left">
-        <h1 class="mb-4">Edit Page</h1>
+        <h1 class="mb-4"><%= weaponArticle.title%></h1>
+        <div class="text-muted mb-2"><%= weaponArticle.createdAt.toLocaleDateString()%></div>
+        <a href="/articles/npcs" class="btn btn-secondary">Weapon Home</a>
+        <a href="/articles/weaponEdit/<%= weaponArticle.id %>" class="btn btn-info">Edit</a>
 
-       <form action="/articles/npcs<%= npcArticle.id %>?_method=PUT" method="POST" >
-            <%- include('_npc_form_fields') %>
-       </form>
+        <div>
+            <%= weaponArticle.markdown %>
+        </div>
+        
     </div>
 </body>
 </html>

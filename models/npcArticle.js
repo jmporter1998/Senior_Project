@@ -7,12 +7,33 @@ const npcPageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    picture: {
+        type: String
+    },
     description: {
         type: String
     },
     markdown: {
         type: String,
         required: true
+    },
+    questline: {
+        type: String,
+    },
+    inventory: {
+        type: []
+    },
+    drops: {
+        type: []
+    },
+    armour: {
+        type: String
+    },
+    weapon: {
+        type: String
+    },
+    spells: {
+        type: String
     },
     createdAt: {
         type: Date,
