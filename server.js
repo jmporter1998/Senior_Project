@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const NpcArticle = require('./models/npcArticle')
-const npcArticleRouter = require('./routes/articles')
+const npcArticleRouter = require('./routes/npcArticles')
 const methodOverride = require('method-override')
 const app = express()
 
@@ -28,14 +28,14 @@ app.get('/npcs', async (req,res) => {
 
     const npcArticles = await NpcArticle.find().sort({createdAt: 'descending'})
 
-    res.render('articles/npcs', {npcArticles: npcArticles
+    res.render('npcArticles/npcs', {npcArticles: npcArticles
     })
 })
 
 app.use('/articles', articleRouter)
 
-//unecesarry???
-app.use('/articles', npcArticleRouter)
+
+app.use('/npcArticles', npcArticleRouter)
 
 
 app.listen(5000)

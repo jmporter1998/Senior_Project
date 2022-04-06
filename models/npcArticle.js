@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const marked = require('marked')
 const slugify = require('slugify')
 
-const npcPageSchema = new mongoose.Schema({
+const pageSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -46,7 +46,7 @@ const npcPageSchema = new mongoose.Schema({
     }
 })
 
-npcPageSchema.pre('validate', function(next) {
+pageSchema.pre('validate', function(next) {
     if (this.title) {
         this.slug = slugify(this.title, { lower: true, strict: true})
     }
@@ -54,4 +54,4 @@ npcPageSchema.pre('validate', function(next) {
     next()
 })
 
-module.exports = mongoose.model('npcPage', npcPageSchema)
+module.exports = mongoose.model('npcPage', pageSchema)
