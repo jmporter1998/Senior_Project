@@ -69,7 +69,7 @@ router.get('/weapons/:slug', async (req, res) => {
     //ERROR HERE
     const weaponArticle = await WeaponArticle.findOne( {slug: req.params.slug})
     if (weaponArticle == null) res.redirect('/npcs')
-    res.render('articles/weaponShow', {npcArticle: npcArticle})
+    res.render('articles/weaponShow', {weaponArticle: weaponArticle})
 }) 
 
 //Post for article
