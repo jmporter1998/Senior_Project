@@ -1,12 +1,63 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ 
 <div class="form-group">
-    <label for="title">Title</label>
+    <label for="title">Weapon Name</label>
     <input required value="<%= weaponArticle.title%>" type="text" name="title" id="title" class="form-control">
 </div>
 
 <div class="form-group">
-    <label for="description">Dscription</label>
+    <label for="title">Picture Url</label>
+    <input required value="<%= weaponArticle.picture%>" type="text" name="picture" id="picture" class="form-control">
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Weapon Stats:</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="col">Pysical Damage:</th>
+            <th scope="col"><input required value="<%= weaponArticle.physical_damage%>" type="number" name="physical_damage" id="physical_damage" class="form-control"></th>
+            <th scope="col">Magic Damage:</th>
+            <th scope="col"><input required value="<%= weaponArticle.magic_damage%>" type="number" name="magic_damage" id="magic_damage" class="form-control"></th>
+            <th scope="col">Fire Damage:</th>
+            <th scope="col"><input required value="<%= weaponArticle.fire_damage%>" type="number" name="fire_damage" id="fire_damage" class="form-control"></th>
+            <th scope="col">Lightning Damage:</th>
+            <th scope="col"><input required value="<%= weaponArticle.lightning_damage%>" type="number" name="lightning_damage" id="lightning_damage" class="form-control"></th>
+        </tr>
+        <tr>
+            <th scope="col">Pysical Reduction:</th>
+            <th scope="col"><input required value="<%= weaponArticle.physical_reduction%>" type="number" name="physical_reduction" id="physical_reduction" class="form-control"></th>
+            <th scope="col">Magic Reduction:</th>
+            <th scope="col"><input required value="<%= weaponArticle.magic_reduction%>" type="number" name="magic_reduction" id="magic_reduction" class="form-control"></th>
+            <th scope="col">Fire Reduction:</th>
+            <th scope="col"><input required value="<%= weaponArticle.fire_reduction%>" type="number" name="fire_reduction" id="fire_reduction" class="form-control"></th>
+            <th scope="col">Lightning Reduction:</th>
+            <th scope="col"><input required value="<%= weaponArticle.lightning_reduction%>" type="number" name="lightning_reduction" id="lightning_reduction" class="form-control"></th>
+        </tr>
+        <tr>
+            <th scope="col">Strength Requirements:</th>
+            <th scope="col"><input required value="<%= weaponArticle.strength_req%>" type="number" name="strength_req" id="strength_req" class="form-control"></th>
+            <th scope="col">Dexterity Requirements:</th>
+            <th scope="col"><input required value="<%= weaponArticle.dexterty_req%>" type="number" name="dexterty_req" id="dexterty_req" class="form-control"></th>
+            <th scope="col">Intelligence Requirements:</th>
+            <th scope="col"><input required value="<%= weaponArticle.intelligence_req%>" type="number" name="intelligence_req" id="intelligence_req" class="form-control"></th>
+            <th scope="col">Faith Requirements:</th>
+            <th scope="col"><input required value="<%= weaponArticle.faith_req%>" type="number" name="faith_req" id="faith_req" class="form-control"></th>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+<div class="form-group">
+    <label for="description">Description</label>
     <textarea required name="description" id="description" class="form-control"><%= weaponArticle.description%></textarea>
 </div>
+
+
 
 
 <a href="/" class="btn btn-secondary mt-2">Cancel</a>

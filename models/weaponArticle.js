@@ -7,6 +7,9 @@ const pageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    picture: {
+        type: String
+    },
     description: {
         type: String
     },
@@ -46,16 +49,13 @@ const pageSchema = new mongoose.Schema({
     lightning_reduction: {
         type: Number
     },
-    stability: {
-        type: Number
-    },
     strength_req: {
         type: Number
     },
     dexterity_req: {
         type: Number
     },
-    inteligence_req: {
+    intelligence_req: {
         type: Number
     },
     faith_req: {
@@ -67,7 +67,7 @@ const pageSchema = new mongoose.Schema({
     dexterity_scaling: {
         type: String
     },
-    inteligence_scaling: {
+    intelligence_scaling: {
         type: String
     },
     faith_scaling: {
