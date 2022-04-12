@@ -9,16 +9,11 @@
 </head>
 <body>
     <div class="container" style="float:left">
-        <h1 class="mb-4"><%= npcArticle.title%></h1>
-        <div class="text-muted mb-2"><%= npcArticle.createdAt.toLocaleDateString()%></div>
-        <a href="/npcArticles/npcs" class="btn btn-secondary">NPC Home</a>
-        <a href="/npcArticles/npcEdit/<%= npcArticle.id %>" class="btn btn-info">Edit</a>
+        <h1 class="mb-4">Edit Page</h1>
 
-        <!--Need to fill in code to display all the information-->
-        <div>
-            <%= npcArticle.markdown %>
-        </div>
-        
+       <form action="/armourArticles/armours<%= armourArticle.id %>?_method=PUT" method="POST" >
+            <%- include('_armour_form_fields') %>
+       </form>
     </div>
 </body>
 </html>

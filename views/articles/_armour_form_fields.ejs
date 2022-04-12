@@ -1,0 +1,21 @@
+<div class="form-group">
+    <label for="title">Armour Name</label>
+    <input required value="<%= armourArticle.title%>" type="text" name="title" id="title" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="title">Armour Picture Link</label>
+    <input required value="<%= armourArticle.picture%>" type="text" name="picture" id="picture" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="description">Dscription</label>
+    <textarea required name="description" id="description" class="form-control"><%= armourArticle.description%></textarea>
+</div>
+<div class="form-group">
+    <label for="markdown">Markown</label>
+    <textarea required name="markdown" id="markdown" class="form-control"><%= armourArticle.markdown%></textarea>
+</div>
+
+<a href="/" class="btn btn-secondary mt-2">Cancel</a>
+<button type="submit" class="btn btn-primary mt-2">Save</button>

@@ -10,8 +10,22 @@
 <body>
     <div class="container" style="float:left">
         <h1 class="mb-4">Weapon Pages</h1>
-        <a href="/articles/newWeapon" class="btn btn-success">New Weapon Page</a>
+        <a href="/weaponArticles/newWeapon" class="btn btn-success">New Weapon Page</a>
         
+        
+        <% weaponArticles.forEach(weaponArticle => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                   <h4 class="card-title"><%= weaponArticle.title %></h4>
+                   <div class="card-subtitle text-muted mb-2" ><%= weaponArticle.createdAt.toLocaleDateString() %></div>
+                   <div class="card-text mb-2" ><%= weaponArticle.description %></div>
+                   <a href="weapons/<%= weaponArticle.slug %>" class="btn btn-primary">Read Page</a>
+                   <form action="/weaponArticles/weapons/<%= weaponArticle.id %>?_method=DELETE" method="POST" class="d-inline">
+                       <button type="submit" class="btn btn-danger">Delete</button>
+                   </form>
+                </div>
+            </div>
+        <% }) %>
         
         
 

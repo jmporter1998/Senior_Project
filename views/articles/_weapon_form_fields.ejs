@@ -47,6 +47,26 @@
             <th scope="col">Faith Requirements:</th>
             <th scope="col"><input required value="<%= weaponArticle.faith_req%>" type="number" name="faith_req" id="faith_req" class="form-control"></th>
         </tr>
+        <tr>
+            <th scope="col">Strength Scaling:</th>
+            <th scope="col"><input required value="<%= weaponArticle.strength_scaling%>" type="text" name="strength_scaling" id="strength_scaling" class="form-control"></th>
+            <th scope="col">Dexterity Scaling:</th>
+            <th scope="col"><input required value="<%= weaponArticle.dexterty_scaling%>" type="text" name="dexterty_scaling" id="dexterty_scaling" class="form-control"></th>
+            <th scope="col">Intelligence Scaling:</th>
+            <th scope="col"><input required value="<%= weaponArticle.intelligence_scaling%>" type="text" name="intelligence_scaling" id="intelligence_scaling" class="form-control"></th>
+            <th scope="col">Faith Requirements:</th>
+            <th scope="col"><input required value="<%= weaponArticle.faith_scaling%>" type="text" name="faith_scaling" id="faith_scaling" class="form-control"></th>
+        </tr>
+        <tr>
+            <th scope="col">Weapon Type:</th>
+            <th scope="col"><input required value="<%= weaponArticle.weapon_type%>" type="text" name="weapon_type" id="weapon_type" class="form-control"></th>
+            <th scope="col">Attack Type:</th>
+            <th scope="col"><input required value="<%= weaponArticle.attack_type%>" type="text" name="attack_type" id="attack_type" class="form-control"></th>
+            <th scope="col">Enchantable:</th>
+            <th scope="col"><input required value="<%= weaponArticle.enchantable%>" type="text" name="enchantable" id="enchantable" class="form-control"></th>
+            <th scope="col">Weight:</th>
+            <th scope="col"><input required value="<%= weaponArticle.weight%>" type="number" name="weight" id="weight" class="form-control"></th>
+        </tr>
       
     </tbody>
   </table>
@@ -57,7 +77,15 @@
     <textarea required name="description" id="description" class="form-control"><%= weaponArticle.description%></textarea>
 </div>
 
+<div class="form-group">
+    <label for="description">How To Get/ Where To Find</label>
+    <textarea required name="location" id="location" class="form-control"><%= weaponArticle.location%></textarea>
+</div>
 
+<div class="form-group">
+    <label for="description">Lore</label>
+    <textarea required name="lore" id="lore" class="form-control"><%= weaponArticle.lore%></textarea>
+</div>
 
 
 <a href="/" class="btn btn-secondary mt-2">Cancel</a>

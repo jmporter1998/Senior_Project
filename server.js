@@ -4,6 +4,11 @@ const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const NpcArticle = require('./models/npcArticle')
 const npcArticleRouter = require('./routes/npcArticles')
+const ArmourArticle = require('./models/armourArticle')
+const armourArticleRouter = require('./routes/armourArticles')
+const WeaponArticle = require('./models/weaponArticle')
+const weaponArticleRouter = require('./routes/weaponArticles')
+
 const methodOverride = require('method-override')
 const app = express()
 
@@ -22,7 +27,6 @@ app.get('/', async (req,res) => {
 })
 
 
-//This is where it should be defined?? Isn't Working for some reason
 // Gets the npc home page to render
 app.get('/npcs', async (req,res) => {
 
@@ -32,10 +36,35 @@ app.get('/npcs', async (req,res) => {
     })
 })
 
+
+// Gets the amour home page to render
+app.get('/armours', async (req,res) => {
+
+    const armourArticles = await ArmourArticle.find().sort({createdAt: 'descending'})
+
+    res.render('armourArticles/armours', {armourArticles: armourArticles
+    })
+})
+
+// Gets the npc home page to render
+app.get('/weapons', async (req,res) => {
+
+    const weaponArticles = await WeaponArticle.find().sort({createdAt: 'descending'})
+
+    res.render('weaponArticles/weapons', {weaponArticles: weaponArticles
+    })
+})
+
+
+
 app.use('/articles', articleRouter)
 
-
 app.use('/npcArticles', npcArticleRouter)
+
+app.use('/armourArticles', armourArticleRouter)
+
+app.use('/weaponArticles', weaponArticleRouter)
+
 
 
 app.listen(5000)
