@@ -8,26 +8,86 @@
     <title>Wiki</title>
 </head>
 <body>
-    <div class="container" style="float:left">
-        <h1 class="mb-4">Wiki Articles</h1>
-        <a href="/articles/new" class="btn btn-success">New Article</a>
-        <a href="/npcArticles/npcs" class="btn btn-success">NPCs</a>
-        <a href="/weaponArticles/weapons" class="btn btn-success">Weapons</a> <!--Error starts here or somewhere after this-->
-        <a href="/armourArticles/armours" class="btn btn-success">Armour</a>
+    
+    <div class="container" style="padding-top: 15px; align-items: center;">
 
-        <% articles.forEach(article => { %>
-            <div class="card mt-4">
-                <div class="card-body">
-                   <h4 class="card-title"><%= article.title %></h4>
-                   <div class="card-subtitle text-muted mb-2" ><%= article.createdAt.toLocaleDateString() %></div>
-                   <div class="card-text mb-2" ><%= article.description %></div>
-                   <a href="articles/<%= article.slug %>" class="btn btn-primary">Read Page</a>
-                   <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                       <button type="submit" class="btn btn-danger">Delete</button>
-                   </form>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+              <!-- Toggle button -->
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+          
+              <!-- Collapsible wrapper -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a>
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcEWJqZ5BQhiUq_Ru3KUYefsa_0DP-vDWvzg&usqp=CAU"
+                    height="60"
+                    alt="Bonfire"
+                    loading="lazy"
+                  />
+                </a>
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/weaponArticles/weapons">Weapons</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="npcArticles/npcs">NPC's</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="armourArticles/armours">Armour</a>
+                  </li>
+                </ul>
+                <!-- Left links -->
+              </div>
+              <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+          </nav>
+          <!-- Navbar -->
+
+        <h1 class="mb-4" style="text-align: center;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8s6nBckp5szjyEPrctnJF6fJELd2pvptcnPhl_KhsNYAy2XOSUL5LKeeuR2Tje7qqyw&usqp=CAU" alt="..." ></h1>
+
+        <div class="row justify-content-center" style="border: none; padding-bottom: 15px;">
+            <div class="row col-md-6 boxlayout justify-content-center"  >
+                <div class="row col-md-11 card rounded" style="border: 1px solid black; align-items: center; margin: 20px; ">
+                    <h1 class="mb-4" style="text-align: center; padding-top: 10px;"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/solaire_helm.png" alt="..." width="200px" height="200px"></h1>
+                    <div style=" width: 227px; height: 50px;"><a href="/articles/new" class="btn btn-success">New Article</a></div>
+                </div>
+                <div class="row col-md-11 card rounded" style="border: 1px solid black; align-items: center; ">
+                    <h1 class="mb-4" style="text-align: center; padding-top: 10px;"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/siegmeyer_of_catarina.jpg" alt="..." width="200px" height="200px"></h1>
+                    <div style=" width: 227px; height: 50px;"><a href="/npcArticles/npcs" class="btn btn-success">NPCs</a></div>
                 </div>
             </div>
-        <% }) %>
+            <div class="row col-md-6 boxlayout justify-content-center">
+                <div class="row col-md-11 card rounded" style="border: 1px solid black; align-items: center; margin: 20px;">
+                    <h1 class="mb-4" style="text-align: center; padding-top: 10px;"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/moonlight_greatsword.png" alt="..." width="200px" height="200px"></h1>
+                    <div style="width: 227px; height: 50px; "><a href="/weaponArticles/weapons" class="btn btn-success">Weapons</a></div>
+                </div>
+                <div class="row col-md-11 card rounded" style="border: 1px solid black; align-items: center; ">
+                    <h1 class="mb-4" style="text-align: center; padding-top: 10px;"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/solaire_helm.png" alt="..." width="200px" height="200px"></h1>
+                    <div style="width: 227px; height: 50px;"><a href="/armourArticles/armours" class="btn btn-success">Armour</a></div>
+                </div>
+            </div>
+        </div>
+        
     </div>
+
+
 </body>
 </html>

@@ -71,6 +71,7 @@ function saveArticleAndRedirectArmour(path){
         armourArticle.location = req.body.location
         armourArticle.lore = req.body.lore
         armourArticle.createdAt = req.body.createdAt
+
         try{
             armourArticle = await armourArticle.save()
             res.redirect(`/armourArticles/armours/${armourArticle.slug}`)
