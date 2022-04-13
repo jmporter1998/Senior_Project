@@ -54,7 +54,23 @@ function saveArticleAndRedirectArmour(path){
         let armourArticle = req.armourArticle
         armourArticle.title = req.body.title
         armourArticle.description = req.body.description
-        armourArticle.markdown = req.body.markdown
+        armourArticle.picture = req.body.picture
+        armourArticle.physical_protection = req.body.physical_protection
+        armourArticle.strike_protection = req.body.strike_protection
+        armourArticle.slash_protection = req.body.slash_protection
+        armourArticle.thrust_protection = req.body.thrust_protection
+        armourArticle.magic_protection = req.body.magic_protection
+        armourArticle.fire_protection = req.body.fire_protection
+        armourArticle.lightning_protection = req.body.lightning_protection
+        armourArticle.poise_resistance = req.body.poise_resistance
+        armourArticle.bleed_resistance = req.body.bleed_resistance
+        armourArticle.poison_resistance = req.body.poison_resistance
+        armourArticle.curse_resistance = req.body.curse_resistance
+        armourArticle.armour_type = req.body.armour_type
+        armourArticle.durability = req.body.durability
+        armourArticle.location = req.body.location
+        armourArticle.lore = req.body.lore
+        armourArticle.createdAt = req.body.createdAt
         try{
             armourArticle = await armourArticle.save()
             res.redirect(`/armourArticles/armours/${armourArticle.slug}`)

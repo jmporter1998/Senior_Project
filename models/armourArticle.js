@@ -7,12 +7,59 @@ const pageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    picture: {
+        type: String
+    },
     description: {
         type: String
     },
-    markdown: {
-        type: String,
-        required: true
+    physical_protection: {
+        type: Number
+    },
+    strike_protection: {
+        type: Number
+    },
+    slash_protection: {
+        type: Number
+    },
+    thrust_protection: {
+        type: Number
+    },
+    magic_protection: {
+        type: Number
+    },
+    fire_protection: {
+        type: Number
+    },
+    lightning_protection: {
+        type: Number
+    },
+    poise_resistance: {
+        type: Number
+    },
+    bleed_resistance: {
+        type: Number
+    },
+    poison_resistance: {
+        type: Number
+    },
+    curse_resistance: {
+        type: Number
+    },
+    armour_type: {
+        type: String
+    },
+    durability: {
+        type: Number
+    },
+    weight: {
+        type: Number
+    },
+    location: {
+        type: String
+    },
+    lore: {
+        type: String
     },
     createdAt: {
         type: Date,

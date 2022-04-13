@@ -9,13 +9,68 @@
 </div>
 
 <div class="form-group">
-    <label for="description">Dscription</label>
+    <label for="description">Description</label>
     <textarea required name="description" id="description" class="form-control"><%= armourArticle.description%></textarea>
 </div>
+
 <div class="form-group">
-    <label for="markdown">Markown</label>
-    <textarea required name="markdown" id="markdown" class="form-control"><%= armourArticle.markdown%></textarea>
+    <label for="description">How To Get/ Where To Find </label>
+    <textarea required name="description" id="description" class="form-control"><%= armourArticle.loation%></textarea>
 </div>
 
-<a href="/" class="btn btn-secondary mt-2">Cancel</a>
-<button type="submit" class="btn btn-primary mt-2">Save</button>
+<div class="form-group">
+    <label for="markdown">Lore</label>
+    <textarea required name="lore" id="lore" class="form-control"><%= armourArticle.lore%></textarea>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Weapon Stats:</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="col">Pysical Protection:</th>
+            <th scope="col"><input required value="<%= armourArticle.physical_protection%>" type="number" name="physical_protection" id="physical_protection" class="form-control"></th>
+            <th scope="col">Strike Protection:</th>
+            <th scope="col"><input required value="<%= armourArticle.strike_protection%>" type="number" name="strike_protection" id="strike_protection" class="form-control"></th>
+            <th scope="col">Slash Protection:</th>
+            <th scope="col"><input required value="<%= armourArticle.strike_protection%>" type="number" name="strike_protection" id="strike_protection" class="form-control"></th>
+            <th scope="col">Thrust Protection:</th>
+            <th scope="col"><input required value="<%= armourArticle.thrust_protection%>" type="number" name="thrust_protection" id="thrust_protection" class="form-control"></th>
+        </tr>
+        <tr>
+            <th scope="col">Magic Protection:</th>
+            <th scope="col"><input required value="<%= armourArticle.magic_protection%>" type="number" name="magic_protection" id="magic_protection" class="form-control"></th>
+            <th scope="col">Fire Protection:</th>
+            <th scope="col"><input required value="<%= armourArticle.fire_protection%>" type="number" name="fire_protection" id="fire_protection" class="form-control"></th>
+            <th scope="col">Lightning Protection:</th>
+            <th scope="col"><input required value="<%= armourArticle.lightning_protection%>" type="number" name="lightning_protection" id="lightning_protection" class="form-control"></th>
+        </tr>
+        <tr>
+            <th scope="col">Poise Resistance:</th>
+            <th scope="col"><input required value="<%= armourArticle.poise_resistance%>" type="number" name="poise_resistance" id="poise_resistance" class="form-control"></th>
+            <th scope="col">Bleed Resistance:</th>
+            <th scope="col"><input required value="<%= armourArticle.bleed_resistance%>" type="number" name="bleed_resistance" id="bleed_resistance" class="form-control"></th>
+            <th scope="col">Poison Resistance:</th>
+            <th scope="col"><input required value="<%= armourArticle.poison_resistance%>" type="number" name="poison_resistance" id="poison_resistance" class="form-control"></th>
+            <th scope="col">Curse Resistance:</th>
+            <th scope="col"><input required value="<%= armourArticle.curse_resistance%>" type="number" name="curse_resistance" id="curse_resistance" class="form-control"></th>
+        </tr>
+        <tr>
+            <th scope="col">Weight:</th>
+            <th scope="col"><input required value="<%= armourArticle.weight%>" type="number" name="weight" id="weight" class="form-control"></th>
+            <th scope="col">Durability:</th>
+            <th scope="col"><input required value="<%= armourArticle.durability%>" type="number" name="durability" id="durability" class="form-control"></th>
+            <th scope="col">Armour Type:</th>
+            <th scope="col"><input required value="<%= armourArticle.armour_type%>" type="text" name="armour_type" id="armour_type" class="form-control"></th>
+        </tr>
+      
+    </tbody>
+  </table>
+
+<div style="padding-bottom: 10px;">
+    <a href="/" class="btn btn-secondary mt-2">Cancel</a>
+    <button type="submit" class="btn btn-primary mt-2" >Save</button>
+</div>
