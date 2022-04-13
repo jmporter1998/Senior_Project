@@ -8,19 +8,25 @@
     <title>Wiki</title>
 </head>
 <body>
-    <div class="container" style="float:left">
-        <h1 class="mb-4">Weapon Pages</h1>
+    <div class="container">
+        <h1 class="mb-4" style="text-align: center;">Weapon Pages</h1>
         <a href="/weaponArticles/newWeapon" class="btn btn-success">New Weapon Page</a>
         
         
         <% weaponArticles.forEach(weaponArticle => { %>
             <div class="card mt-4">
-                <div class="card-body">
-                   <h4 class="card-title"><%= weaponArticle.title %></h4>
-                   <div class="card-subtitle text-muted mb-2" ><%= weaponArticle.createdAt.toLocaleDateString() %></div>
-                   <div class="card-text mb-2" ><%= weaponArticle.description %></div>
-                   <a href="weapons/<%= weaponArticle.slug %>" class="btn btn-primary">Read Page</a>
+                <div class="row " style="border: none; padding-bottom: 15px;">
+                    <div class="row col-md-2 boxlayout "  >
+                        <img src="<%= weaponArticle.picture %>" alt="...">
+                    </div>
+                    <div class="row col-md-10 boxlayout "  >
+                        <h4 class="card-title"><%= weaponArticle.title %></h4>
+                        <div class="card-subtitle text-muted mb-2" ><%= weaponArticle.createdAt.toLocaleDateString() %></div>
+                        <div class="card-text mb-2" ><%= weaponArticle.description %></div>
+                        <a href="weapons/<%= weaponArticle.slug %>" class="btn btn-primary" style="width: 150px;">Read Page</a>
+                    </div>
                 </div>
+                
             </div>
         <% }) %>
         
