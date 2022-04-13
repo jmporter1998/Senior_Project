@@ -59,20 +59,20 @@
                                 <th scope="col"><div><%= weaponArticle.faith_scaling %></div></th>
                             </tr>
                             <tr>
-                                <th scope="col" style="width:50px;" >Weapon Type:</th>
-                                <th scope="col" style="width:50px;" ><div><%= weaponArticle.weapon_type %></div></th>
+                                <th scope="col" style="width:50px;" colspan="4">Weapon Type:</th>
+                                <th scope="col" style="width:50px;" colspan="4"><div><%= weaponArticle.weapon_type %></div></th>
                             </tr>
                             <tr>
-                                <th scope="col" style="width:50px;">Attack Type:</th>
-                                <th scope="col" style="width:50px;"><div><%= weaponArticle.attack_type %></div></th>
+                                <th scope="col" style="width:50px;" colspan="4">Attack Type:</th>
+                                <th scope="col" style="width:50px;" colspan="4"><div><%= weaponArticle.attack_type %></div></th>
                             </tr>
                             <tr>
-                                <th scope="col" style="width:50px;">Enchantable:</th>
-                                <th scope="col" style="width:50px;"><div><%= weaponArticle.enchantable %></div></th>
+                                <th scope="col" style="width:50px;" colspan="4">Enchantable:</th>
+                                <th scope="col" style="width:50px;" colspan="4"><div><%= weaponArticle.enchantable %></div></th>
                             </tr>
                             <tr>
-                                <th scope="col" style="width:50px;">Weight:</th>
-                                <th scope="col" style="width:50px;"><div><%= weaponArticle.weight %></div></th>
+                                <th scope="col" style="width:50px;" colspan="4">Weight:</th>
+                                <th scope="col" style="width:50px;" colspan="4"><div><%= weaponArticle.weight %></div></th>
                             </tr>
             
                             
@@ -84,14 +84,22 @@
             <div class="border row col-md-8 boxlayout">
                 
                     <div class="col" style="text-align: left;">
-                        <div style="float: left;"><%= weaponArticle.description %></div>
-                        <div><%= weaponArticle.location %></div>
-                        <div><%= weaponArticle.lore %></div>
-                    
-                        <div class="text-muted mb-2"><%= weaponArticle.createdAt.toLocaleDateString()%></div>
+                        <h4 style="border-bottom: 1px solid black;">Weapon Description </h4>
+                        <div style="float: left; padding-bottom: 30px;"><%= weaponArticle.description %></div>
+                        <h4 style="border-bottom: 1px solid black;">Weapon Location/ How To Get </h4>
+                        <div style="float: left; padding-bottom: 30px;"><%= weaponArticle.location %></div>
+                        <h4 style="border-bottom: 1px solid black;">Weapon Lore </h4>
+                        <div style="float: left; padding-bottom: 30px;"><%= weaponArticle.lore %></div>
+                    </div>
+                    <div class="text-muted mb-2" style="padding-bottom: 30px;">Created <%= weaponArticle.createdAt.toLocaleDateString()%></div>
+                    <div class="col" style="text-align: left;">
                         <a href="/weaponArticles/weapons" class="btn btn-secondary">Weapon Home</a>
                         <a href="/weaponArticles/weaponEdit/<%= weaponArticle.id %>" class="btn btn-info">Edit</a>
                     </div>
+                    
+            </div>
+            
+            
                 
     
             

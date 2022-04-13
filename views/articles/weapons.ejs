@@ -20,9 +20,6 @@
                    <div class="card-subtitle text-muted mb-2" ><%= weaponArticle.createdAt.toLocaleDateString() %></div>
                    <div class="card-text mb-2" ><%= weaponArticle.description %></div>
                    <a href="weapons/<%= weaponArticle.slug %>" class="btn btn-primary">Read Page</a>
-                   <form action="/weaponArticles/weapons/<%= weaponArticle.id %>?_method=DELETE" method="POST" class="d-inline">
-                       <button type="submit" class="btn btn-danger">Delete</button>
-                   </form>
                 </div>
             </div>
         <% }) %>
