@@ -8,79 +8,96 @@
     <title>Wiki</title>
 </head>
 <body>
-    <div class="container" style="float:left">
-        <h1 class="mb-4"><%= weaponArticle.title%></h1>
-        <div class="text-muted mb-2"><%= weaponArticle.createdAt.toLocaleDateString()%></div>
-        <a href="/weaponArticles/weapons" class="btn btn-secondary">Weapon Home</a>
-        <a href="/weaponArticles/weaponEdit/<%= weaponArticle.id %>" class="btn btn-info">Edit</a>
+    <div class="container" style="float:left; padding-top: 15px; ">
 
-        
-        <table class="table rounded" style="width:100px; border: 1px solid black">
-            <tbody>
-                <tr> 
-                    <th colspan="20"> <h2 id="toc0"><img src="<%= weaponArticle.picture%>" alt="" width="80" height="90"><br><%= weaponArticle.title %></h2> </th> 
-                </tr> 
+        <div class="row" >
+            <div class="border row col-md-4 boxlayout" style="border: none;">
+                <div class="border col-md-7"">
+                    <table class="table rounded" style="width:100px; border: 1px solid black">
+                        <tbody>
+                            <tr> 
+                                <th colspan="20" style="text-align: center;"> <h2 id="toc0"><img src="<%= weaponArticle.picture%>" alt="" width="80" height="90"><br><%= weaponArticle.title %></h2> </th> 
+                            </tr> 
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/physical_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.physical_damage %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/magic_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.magic_damage %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/fire_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.fire_damage %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/lightning_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.lightning_damage %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/physical_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.physical_reduction %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/magic_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.magic_reduction %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/fire_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.fire_reduction %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/lightning_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.lightning_reduction %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/strength_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.strength_req %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/dexterity_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.dexterity_req %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/intelligence_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.intelligence_req %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/faith_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.faith_req %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/strength_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.strength_scaling %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/dexterity_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.dexterty_scaling%></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/intelligence_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.intelligence_scaling%></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/faith_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
+                                <th scope="col"><div><%= weaponArticle.faith_scaling %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" style="width:50px;" >Weapon Type:</th>
+                                <th scope="col" style="width:50px;" ><div><%= weaponArticle.weapon_type %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" style="width:50px;">Attack Type:</th>
+                                <th scope="col" style="width:50px;"><div><%= weaponArticle.attack_type %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" style="width:50px;">Enchantable:</th>
+                                <th scope="col" style="width:50px;"><div><%= weaponArticle.enchantable %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" style="width:50px;">Weight:</th>
+                                <th scope="col" style="width:50px;"><div><%= weaponArticle.weight %></div></th>
+                            </tr>
+            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-                <tr>
-                    <th scope="col""><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/physical_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col" style="width: 25px;"><input required value="<%= weaponArticle.physical_damage%>" type="number" name="physical_damage" id="physical_damage" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/magic_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.magic_damage%>" type="number" name="magic_damage" id="magic_damage" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/fire_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.fire_damage%>" type="number" name="fire_damage" id="fire_damage" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/lightning_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.lightning_damage%>" type="number" name="lightning_damage" id="lightning_damage" class="form-control"></th>
-                </tr>
-                <tr>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/physical_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.physical_reduction%>" type="number" name="physical_reduction" id="physical_reduction" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/magic_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.magic_reduction%>" type="number" name="magic_reduction" id="magic_reduction" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/fire_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.fire_reduction%>" type="number" name="fire_reduction" id="fire_reduction" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/lightning_defense_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.lightning_reduction%>" type="number" name="lightning_reduction" id="lightning_reduction" class="form-control"></th>
-                </tr>
-                <tr>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/strength_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.strength_req%>" type="number" name="strength_req" id="strength_req" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/dexterity_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.dexterity_req%>" type="number" name="dexterity_req" id="dexterity_req" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/intelligence_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.intelligence_req%>" type="number" name="inteligence_req" id="intelligence_req" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/faith_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.faith_req%>" type="number" name="faith_req" id="faith_req" class="form-control"></th>
-                </tr>
-                <tr>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/strength_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.strength_scaling%>" type="text" name="strength_scaling" id="strength_scaling" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/dexterity_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.dexterity_scaling%>" type="text" name="dexterity_scaling" id="dexterity_scaling" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/intelligence_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.intelligence_scaling%>" type="text" name="intelligence_scaling" id="intelligence_scaling" class="form-control"></th>
-                    <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/faith_dark_souls.jpg" class="rounded mx-auto d-block" alt="..."></th>
-                    <th scope="col"><input required value="<%= weaponArticle.faith_scaling%>" type="text" name="faith_scaling" id="faith_scaling" class="form-control"></th>
-                </tr>
-                <tr>
-                    <th scope="col">Weapon Type:</th>
-                    <th scope="col"><input required value="<%= weaponArticle.weapon_type%>" type="text" name="weapon_type" id="weapon_type" class="form-control"></th>
-                    <th scope="col">Attack Type:</th>
-                    <th scope="col"><input required value="<%= weaponArticle.attack_type%>" type="text" name="attack_type" id="attack_type" class="form-control"></th>
-                    <th scope="col">Enchantable:</th>
-                    <th scope="col"><input required value="<%= weaponArticle.enchantable%>" type="text" name="enchantable" id="enchantable" class="form-control"></th>
-                    <th scope="col">Weight:</th>
-                    <th scope="col"><input required value="<%= weaponArticle.weight%>" type="number" name="weight" id="weight" class="form-control"></th>
-                </tr>
+            <div class="border row col-md-8 boxlayout">
                 
-            </tbody>
-            </table>
-        
-        
-        
-
-        <div>
-            <%= weaponArticle.markdown %>
+                    <div class="col" style="text-align: left;">
+                        <div style="float: left;"><%= weaponArticle.description %></div>
+                        <div><%= weaponArticle.location %></div>
+                        <div><%= weaponArticle.lore %></div>
+                    
+                        <div class="text-muted mb-2"><%= weaponArticle.createdAt.toLocaleDateString()%></div>
+                        <a href="/weaponArticles/weapons" class="btn btn-secondary">Weapon Home</a>
+                        <a href="/weaponArticles/weaponEdit/<%= weaponArticle.id %>" class="btn btn-info">Edit</a>
+                    </div>
+                
+    
+            
         </div>
+
+        
         
     </div>
 </body>
