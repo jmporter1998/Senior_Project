@@ -48,7 +48,7 @@ router.post('/enemies', async (req, res, next) => {
 router.put('/enemies/:id', async (req, res, next) => {
     req.enemyArticle = await EnemyArticle.findById(req.params.id)
     next()
-}, saveArticleAndRedirectEnemy('npcEdit'))
+}, saveArticleAndRedirectEnemy('enemyEdit'))
 
 // Get for armour home
 router.get('/enemies', async (req, res) => {

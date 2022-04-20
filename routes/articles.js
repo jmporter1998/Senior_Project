@@ -34,12 +34,13 @@ router.post('/', async (req, res, next) => {
 }, saveArticleAndRedirect('new'))
 
 
+
+
 //Edit Article
 router.put('/:id', async (req, res, next) => {
     req.article = await Article.findById(req.params.id)
     next()
 }, saveArticleAndRedirect('edit'))
-
 
 router.delete('/:id', async (req, res) => {
     await Article.findByIdAndDelete(req.params.id)
