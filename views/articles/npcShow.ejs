@@ -8,16 +8,28 @@
     <title>Wiki</title>
 </head>
 <body>
-    <div class="container" style="float:left">
-        <h1 class="mb-4"><%= npcArticle.title%></h1>
+    <div class="container" style="padding-bottom: 20px;">
+
+        <div style="padding-top: 15px;">
+            <img src="<%= npcArticle.picture%>" class="rounded mx-auto d-block" alt="..." width="500">
+            <h1 style="text-align: center;"><%= npcArticle.title%></h1>
+        </div>
+        <div style="padding-bottom: 20px;"><%= npcArticle.description%></div>
+        <h4 >Questline</h4>
+        <div style="padding-bottom: 20px;"><%= npcArticle.questline%></div>
+        <h4 >Armour Set</h4>
+        <div style="padding-bottom: 20px;"><%= npcArticle.armour%></div>
+        <h4 >Weapon</h4>
+        <div style="padding-bottom: 20px;"><%= npcArticle.weapon%></div>
+        <h4 >Inventory For Sale</h4>
+        <div style="padding-bottom: 20px;"><%= npcArticle.inventory%></div>
+        <h4 >Drops</h4>
+        <div style="padding-bottom: 20px;"><%= npcArticle.drops%></div>
         <div class="text-muted mb-2"><%= npcArticle.createdAt.toLocaleDateString()%></div>
         <a href="/npcArticles/npcs" class="btn btn-secondary">NPC Home</a>
         <a href="/npcArticles/npcEdit/<%= npcArticle.id %>" class="btn btn-info">Edit</a>
 
-        <!--Need to fill in code to display all the information-->
-        <div>
-            <%= npcArticle.markdown %>
-        </div>
+        
         
     </div>
 </body>

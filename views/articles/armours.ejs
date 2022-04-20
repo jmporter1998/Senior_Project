@@ -8,21 +8,79 @@
     <title>Wiki</title>
 </head>
 <body>
-    <div class="container" style="float:left">
+    <div class="container" >
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+              <!-- Toggle button -->
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+          
+              <!-- Collapsible wrapper -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a>
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcEWJqZ5BQhiUq_Ru3KUYefsa_0DP-vDWvzg&usqp=CAU"
+                    height="60"
+                    alt="Bonfire"
+                    loading="lazy"
+                  />
+                </a>
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/weaponArticles/weapons">Weapons</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/npcArticles/npcs">NPCs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/armourArticles/armours">Armour</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/enemyArticles/enemies">Enemies</a>
+                  </li>
+                </ul>
+                <!-- Left links -->
+              </div>
+              <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+          </nav>
+          <!-- Navbar -->
+
+
         <h1 class="mb-4">Armour Pages</h1>
         <a href="/armourArticles/newArmour" class="btn btn-success">New Armour Page</a>
         
         <% armourArticles.forEach(armourArticle => { %>
             <div class="card mt-4">
-                <div class="card-body">
-                   <h4 class="card-title"><%= armourArticle.title %></h4>
-                   <div class="card-subtitle text-muted mb-2" ><%= armourArticle.createdAt.toLocaleDateString() %></div>
-                   <div class="card-text mb-2" ><%= armourArticle.description %></div>
-                   <a href="armours/<%= armourArticle.slug %>" class="btn btn-primary">Read Page</a>
-                   <form action="/armourArticles/<%= armourArticle.id %>?_method=DELETE" method="POST" class="d-inline">
-                       <button type="submit" class="btn btn-danger">Delete</button>
-                   </form>
+                <div class="row " style="border: none; padding-bottom: 15px;">
+                    <div class="row col-md-3 boxlayout "  >
+                        <img src="<%= armourArticle.picture %>" alt="..." height="250">
+                    </div>
+                    <div class="row col-md-9 boxlayout "  >
+                        <h4 class="card-title"><%= armourArticle.title %></h4>
+                        <div class="card-subtitle text-muted mb-2" ><%= armourArticle.createdAt.toLocaleDateString() %></div>
+                        <div class="card-text mb-2" ><%= armourArticle.description %></div>
+                        <a href="armours/<%= armourArticle.slug %>" class="btn btn-primary" style="width: 150px; height: 40px;">Read Page</a>
+                    </div>
                 </div>
+                
             </div>
         <% }) %>
         

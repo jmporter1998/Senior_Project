@@ -4,6 +4,8 @@ const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const NpcArticle = require('./models/npcArticle')
 const npcArticleRouter = require('./routes/npcArticles')
+const EnemyArticle = require('./models/enemyArticle')
+const enemyArticleRouter = require('./routes/enemyArticles')
 const ArmourArticle = require('./models/armourArticle')
 const armourArticleRouter = require('./routes/armourArticles')
 const WeaponArticle = require('./models/weaponArticle')
@@ -55,6 +57,14 @@ app.get('/weapons', async (req,res) => {
     })
 })
 
+// Gets the npc home page to render
+app.get('/enemies', async (req,res) => {
+
+    const enemyArticles = await EnemyArticle.find().sort({createdAt: 'descending'})
+
+    res.render('enemyArticles/enemies', {enemyArticles: enemyArticles
+    })
+})
 
 
 app.use('/articles', articleRouter)
@@ -64,6 +74,8 @@ app.use('/npcArticles', npcArticleRouter)
 app.use('/armourArticles', armourArticleRouter)
 
 app.use('/weaponArticles', weaponArticleRouter)
+
+app.use('/enemyArticles', enemyArticleRouter)
 
 
 

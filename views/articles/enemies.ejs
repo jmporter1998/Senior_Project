@@ -63,21 +63,21 @@
           </nav>
           <!-- Navbar -->
 
-        <h1 class="mb-4" style="text-align: center;">NPC Pages</h1>
-        <a href="/npcArticles/newNPC" class="btn btn-success">New NPC Page</a>
+        <h1 class="mb-4" style="text-align: center;">Enemy Pages</h1>
+        <a href="/enemyArticles/newEnemy" class="btn btn-success">New Enemy Page</a>
         
 
-        <% npcArticles.forEach(npcArticle => { %>
+        <% enemyArticles.forEach(enemyArticle => { %>
             <div class="card mt-4">
                 <div class="row " style="border: none; padding-bottom: 15px;">
                     <div class="row col-md-4 boxlayout "  >
-                        <img src="<%= npcArticle.picture %>" alt="...">
+                        <img src="<%= enemyArticle.picture %>" alt="...">
                     </div>
                     <div class="row col-md-8 boxlayout "  >
-                        <h4 class="card-title"><%= npcArticle.title %></h4>
-                        <div class="card-subtitle text-muted mb-2" ><%= npcArticle.createdAt.toLocaleDateString() %></div>
-                        <div class="card-text mb-2" ><%= npcArticle.description %></div>
-                        <a href="npcs/<%= npcArticle.slug %>" class="btn btn-primary" style="width: 150px;">Read Page</a>
+                        <h4 class="card-title"><%= enemyArticle.title %></h4>
+                        <div class="card-subtitle text-muted mb-2" ><%= enemyArticle.createdAt.toLocaleDateString() %></div>
+                        <div class="card-text mb-2" ><%= enemyArticle.description %></div>
+                        <a href="enemies/<%= enemyArticle.slug %>" class="btn btn-primary" style="width: 150px;">Read Page</a>
                     </div>
                 </div>
                 

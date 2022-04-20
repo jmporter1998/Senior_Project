@@ -8,6 +8,110 @@
     <title>Wiki</title>
 </head>
 <body>
+    <div class="container" style="float:left; padding-top: 15px; ">
+
+        <div class="row" >
+            <div class=" row col-md-4 boxlayout" style="border: none;">
+                <div class=" col-md-7">
+                    <table class="table rounded" style="width:300px; border: 1px solid black">
+                        <tbody>
+                            <tr> 
+                                <th colspan="20" style="text-align: center;"> <h2 id="toc0"><img src="<%= armourArticle.picture%>" alt="" width="80" height="90"><h2><%= armourArticle.title %></h2> </th> 
+                            </tr> 
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_phy.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.physical_protection %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/magic_damage_dark_souls.jpg" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.poise_resistance %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_strike.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.strike_protection %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_res_bleed.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.bleed_resistance %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_slash.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.slash_protection %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_res_poison.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.poison_resistance %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_thrust.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.thrust_protection %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_res_curse.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.curse_resistance %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_magi.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.magic_protection %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_other_dura.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.durability %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_fire.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.fire_protection %></div></th>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_other_weig.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.weight %></div></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"><img src="https://darksouls.wiki.fextralife.com/file/Dark-Souls/icon_prot_lightn.png" class="rounded mx-auto d-block" alt="..." width="25" height="25"></th>
+                                <th scope="col"><div><%= armourArticle.lightning_protection %></div></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row col-md-8 boxlayout">
+                
+                <div class="col" style="text-align: left;">
+                    <h4 style="border-bottom: 1px solid black;">Armour Description </h4>
+                    <div style="float: left; padding-bottom: 30px;"><%= armourArticle.description %></div>
+                    <h4 style="border-bottom: 1px solid black;">Armour Location/ How To Get </h4>
+                    <div style="float: left; padding-bottom: 30px;"><%= armourArticle.location %></div>
+                    <h4 style="border-bottom: 1px solid black;">Armour Lore </h4>
+                    <div style="float: left; padding-bottom: 30px;"><%= armourArticle.lore %></div>
+                </div>
+                <div class="text-muted mb-2" style="padding-bottom: 30px;">Created <%= armourArticle.createdAt.toLocaleDateString()%></div>
+                <div class="col" style="text-align: left;">
+                    <a href="/armourArticles/armours" class="btn btn-secondary">Armour Home</a>
+                    <a href="/armourArticles/armourEdit/<%= armourArticle.id %>" class="btn btn-info">Edit</a>
+                </div>
+                    
+                    
+            </div>
+            
+            
+                
+    
+            
+        </div>
+
+        
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container" style="float:left">
         <h1 class="mb-4"><%= armourArticle.title%></h1>
         <div class="text-muted mb-2"><%= armourArticle.createdAt.toLocaleDateString()%></div>

@@ -51,4 +51,4 @@ pageSchema.pre('validate', function(next) {
     next()
 })
 
-module.exports = mongoose.model('npcPage', pageSchema)
+module.exports = mongoose.model('enemyPage', pageSchema)

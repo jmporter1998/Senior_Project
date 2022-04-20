@@ -69,6 +69,7 @@ function saveArticleAndRedirectArmour(path){
         armourArticle.armour_type = req.body.armour_type
         armourArticle.durability = req.body.durability
         armourArticle.location = req.body.location
+        armourArticle.weight = req.body.weight
         armourArticle.lore = req.body.lore
         armourArticle.createdAt = req.body.createdAt
 
@@ -76,6 +77,7 @@ function saveArticleAndRedirectArmour(path){
             armourArticle = await armourArticle.save()
             res.redirect(`/armourArticles/armours/${armourArticle.slug}`)
         }catch(e){
+            console.log(e)
             res.render('armourArticles/armours/${path}', {armourArticle: armourArticle})
         }
     }

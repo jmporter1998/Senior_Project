@@ -1,0 +1,48 @@
+<div class="form-group">
+    <label for="title">Enemy Name</label>
+    <input required value="<%= enemyArticle.title%>" type="text" name="title" id="title" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="title">Enemy Picture Link</label>
+    <input required value="<%= enemyArticle.picture%>" type="text" name="picture" id="picture" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="description">Dscription</label>
+    <textarea required name="description" id="description" class="form-control"><%= enemyArticle.description%></textarea>
+</div>
+
+<div class="form-group">
+    <label for="description">Questline</label>
+    <textarea required name="questline" id="questline" class="form-control"><%= enemyArticle.questline%></textarea>
+</div>
+
+<div class="form-group">
+    <label for="description">Armour Set</label>
+    <textarea required name="armour" id="armouor" class="form-control"><%= enemyArticle.armour%></textarea>
+</div>
+
+<div class="form-group">
+    <label for="description">Weapon</label>
+    <textarea required name="weapon" id="weapon" class="form-control"><%= enemyArticle.weapon%></textarea>
+</div>
+
+<div class="form-group">
+    <label for="description">Inventory For Sale</label>
+    <textarea required name="inventory" id="inventory" class="form-control"><%= enemyArticle.inventory%></textarea>
+</div>
+
+<div class="form-group">
+    <label for="description">Drops</label>
+    <textarea required name="drops" id="drops" class="form-control"><%= enemyArticle.drops%></textarea>
+</div>
+
+
+
+
+
+
+
+<a href="/" class="btn btn-secondary mt-2">Cancel</a>
+<button type="submit" class="btn btn-primary mt-2">Save</button>

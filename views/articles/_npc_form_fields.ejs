@@ -18,28 +18,31 @@
     <textarea required name="questline" id="questline" class="form-control"><%= npcArticle.questline%></textarea>
 </div>
 
-<!-- Inventory for sale here in a dynamic table?? -->
-
-<!-- Dropshere in a dynamic table?? -->
-
 <div class="form-group">
     <label for="description">Armour Set</label>
-    <textarea required name="armour" id="armouot" class="form-control"><%= npcArticle.armour%></textarea>
+    <textarea required name="armour" id="armouor" class="form-control"><%= npcArticle.armour%></textarea>
 </div>
 
 <div class="form-group">
     <label for="description">Weapon</label>
-    <textarea required name="armour" id="armouot" class="form-control"><%= npcArticle.armour%></textarea>
+    <textarea required name="weapon" id="weapon" class="form-control"><%= npcArticle.weapon%></textarea>
 </div>
-
-<!-- Spells in a dynamic table -->
-
-
 
 <div class="form-group">
-    <label for="markdown">Markown</label>
-    <textarea required name="markdown" id="markdown" class="form-control"><%= npcArticle.markdown%></textarea>
+    <label for="description">Inventory For Sale</label>
+    <textarea required name="inventory" id="inventory" class="form-control"><%= npcArticle.inventory%></textarea>
 </div>
+
+<div class="form-group">
+    <label for="description">Drops</label>
+    <textarea required name="drops" id="drops" class="form-control"><%= npcArticle.drops%></textarea>
+</div>
+
+
+
+
+
+
 
 <a href="/" class="btn btn-secondary mt-2">Cancel</a>
 <button type="submit" class="btn btn-primary mt-2">Save</button>
