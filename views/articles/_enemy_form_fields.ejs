@@ -9,28 +9,33 @@
 </div>
 
 <div class="form-group">
-    <label for="description">Dscription</label>
+    <label for="title">Health</label>
+    <input required value="<%= enemyArticle.health%>" type="number" name="health" id="health" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="title">Souls</label>
+    <input required value="<%= enemyArticle.souls%>" type="number" name="souls" id="souls" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="description">Description</label>
     <textarea required name="description" id="description" class="form-control"><%= enemyArticle.description%></textarea>
 </div>
 
 <div class="form-group">
-    <label for="description">Questline</label>
-    <textarea required name="questline" id="questline" class="form-control"><%= enemyArticle.questline%></textarea>
+    <label for="description">Location</label>
+    <textarea required name="location" id="location" class="form-control"><%= enemyArticle.location%></textarea>
 </div>
 
 <div class="form-group">
-    <label for="description">Armour Set</label>
-    <textarea required name="armour" id="armouor" class="form-control"><%= enemyArticle.armour%></textarea>
+    <label for="description">Attacks</label>
+    <textarea required name="attacks" id="attacks" class="form-control"><%= enemyArticle.attacks%></textarea>
 </div>
 
 <div class="form-group">
-    <label for="description">Weapon</label>
-    <textarea required name="weapon" id="weapon" class="form-control"><%= enemyArticle.weapon%></textarea>
-</div>
-
-<div class="form-group">
-    <label for="description">Inventory For Sale</label>
-    <textarea required name="inventory" id="inventory" class="form-control"><%= enemyArticle.inventory%></textarea>
+    <label for="description">Stategies</label>
+    <textarea required name="strategies" id="strategies" class="form-control"><%= enemyArticle.strategies%></textarea>
 </div>
 
 <div class="form-group">
@@ -38,6 +43,10 @@
     <textarea required name="drops" id="drops" class="form-control"><%= enemyArticle.drops%></textarea>
 </div>
 
+<div class="form-group">
+    <label for="description">Lore</label>
+    <textarea required name="lore" id="lore" class="form-control"><%= enemyArticle.lore%></textarea>
+</div>
 
 
 

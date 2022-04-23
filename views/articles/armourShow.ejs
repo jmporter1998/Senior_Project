@@ -140,11 +140,11 @@
                 
                 <div class="col" style="text-align: left;">
                     <h4 style="border-bottom: 1px solid black;">Armour Description </h4>
-                    <div style="float: left; padding-bottom: 30px;"><%= armourArticle.description %></div>
-                    <h4 style="border-bottom: 1px solid black;">Armour Location/ How To Get </h4>
-                    <div style="float: left; padding-bottom: 30px;"><%= armourArticle.location %></div>
-                    <h4 style="border-bottom: 1px solid black;">Armour Lore </h4>
-                    <div style="float: left; padding-bottom: 30px;"><%= armourArticle.lore %></div>
+                    <div style="float: left; padding-bottom: 30px; white-space: pre-wrap;"><%= armourArticle.description %></div>
+                    <h4 style="border-bottom: 1px solid black; ">Armour Location/ How To Get </h4>
+                    <div style="float: left; padding-bottom: 30px; white-space: pre-wrap; "><%= armourArticle.location %></div>
+                    <h4 style="border-bottom: 1px solid black; clear: left;">Armour Lore </h4>
+                    <div style="float: left; padding-bottom: 30px; white-space: pre-wrap;"><%= armourArticle.lore %></div>
                 </div>
                 <div class="text-muted mb-2" style="padding-bottom: 30px;">Created <%= armourArticle.createdAt.toLocaleDateString()%></div>
                 <div class="col" style="text-align: left;">

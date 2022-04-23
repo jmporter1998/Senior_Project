@@ -80,21 +80,40 @@
 
     <div class="container" style="padding-bottom: 20px; padding-top: 75px;">
 
-        <div style="padding-top: 15px;">
-            <img src="<%= enemyArticle.picture%>" class="rounded mx-auto d-block" alt="..." width="500">
-            <h1 style="text-align: center;"><%= enemyArticle.title%></h1>
+        <div style="padding-top: 15px; ">
+          <table class="table rounded center" style="width:100px; border: 1px solid black; margin-left:auto; margin-right:auto;">
+            <tbody>
+                <tr> 
+                    <th colspan="20" style="text-align: center;"> <h2 id="toc0"><img src="<%= enemyArticle.picture%>" alt="" width="700" height="400"> </th> 
+                </tr> 
+                <tr>
+                    <th scope="col"><div>Health:</div></th>
+                    <th scope="col"><div><%= enemyArticle.health %></div></th>
+                    <th scope="col"><div>Souls:</div></th>
+                    <th scope="col"><div><%= enemyArticle.souls %></div></th>                    
+                </tr>
+                <tr>
+                  <th scope="col"><div>Location:</div></th>
+                  <th scope="col"><div><%= enemyArticle.location %></div></th>                    
+              </tr>
+                
+
+                
+            </tbody>
+          </table>
+        
+            
+        <h1 style="text-align: center;"><%= enemyArticle.title%></h1>
         </div>
-        <div style="padding-bottom: 20px;"><%= enemyArticle.description%></div>
-        <h4 >Questline</h4>
-        <div style="padding-bottom: 20px;"><%= enemyArticle.questline%></div>
-        <h4 >Armour Set</h4>
-        <div style="padding-bottom: 20px;"><%= enemyArticle.armour%></div>
-        <h4 >Weapon</h4>
-        <div style="padding-bottom: 20px;"><%= enemyArticle.weapon%></div>
-        <h4 >Inventory For Sale</h4>
-        <div style="padding-bottom: 20px;"><%= enemyArticle.inventory%></div>
-        <h4 >Drops</h4>
-        <div style="padding-bottom: 20px;"><%= enemyArticle.drops%></div>
+        <div style="padding-bottom: 20px; white-space: pre-wrap;"><%= enemyArticle.description%></div>
+        <h4 style="border-bottom: 1px solid black;">Attacks</h4>
+        <div style="padding-bottom: 20px; white-space: pre-wrap;"><p><%= enemyArticle.attacks%></p></div>
+        <h4 style="border-bottom: 1px solid black;">Strategies</h4>
+        <div style="padding-bottom: 20px; white-space: pre-wrap;"><%= enemyArticle.strategies%></div>
+        <h4 style="border-bottom: 1px solid black;">Drops</h4>
+        <div style="padding-bottom: 20px; white-space: pre-wrap;"><%= enemyArticle.drops%></div>
+        <h4 style="border-bottom: 1px solid black;">Lore</h4>
+        <div style="padding-bottom: 20px; white-space: pre-wrap;"><%= enemyArticle.lore%></div>
         <div class="text-muted mb-2"><%= enemyArticle.createdAt.toLocaleDateString()%></div>
         <a href="/enemyArticles/enemies" class="btn btn-secondary">Enemy Home</a>
         <a href="/enemyArticles/enemyEdit/<%= enemyArticle.id %>" class="btn btn-info">Edit</a>

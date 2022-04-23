@@ -62,12 +62,17 @@ function saveArticleAndRedirectEnemy(path){
         let enemyArticle = req.enemyArticle
         enemyArticle.title = req.body.title
         enemyArticle.picture = req.body.picture
+        enemyArticle.health = req.body.health
+        enemyArticle.souls = req.body.souls
+        enemyArticle.location = req.body.location
+        enemyArticle.attacks = req.body.attacks
+        enemyArticle.strategies = req.body.strategies
         enemyArticle.description = req.body.description
-        enemyArticle.questline = req.body.questline
-        enemyArticle.armour = req.body.armour
-        enemyArticle.weapon = req.body.weapon
-        enemyArticle.inventory = req.body.inventory
         enemyArticle.drops = req.body.drops
+        enemyArticle.lore = req.body.lore
+        enemyArticle.createdAt = req.body.createdAt
+
+
         try{
             enemyArticle = await enemyArticle.save()
             res.redirect(`/enemyArticles/enemies/${enemyArticle.slug}`)

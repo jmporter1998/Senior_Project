@@ -10,26 +10,28 @@ const pageSchema = new mongoose.Schema({
     picture: {
         type: String
     },
-    description: {
+    health: {
+        type: Number
+    },
+    souls: {
+        type: Number
+    },
+    location: {
         type: String
     },
-    
-    questline: {
-        type: String,
+    attacks: {
+        type: String
     },
-    inventory: {
+    strategies: {
+        type: String
+    },
+    description: {
         type: String
     },
     drops: {
         type: String
     },
-    armour: {
-        type: String
-    },
-    weapon: {
-        type: String
-    },
-    spells: {
+    lore: {
         type: String
     },
     createdAt: {
