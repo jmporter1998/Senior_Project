@@ -63,7 +63,7 @@
                   <div class="container-fluid" style="float: right;">
                     <form class="d-flex">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 400px;">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
+                      <button class="btn btn-outline-success" type="submit" >Search</button>
                     </form>
                   </div>
                 </div>
@@ -79,19 +79,24 @@
 
         <h1 class="mb-4" style="text-align: center; padding-top: 75px;">Enemy Pages</h1>
         <a href="/enemyArticles/newEnemy" class="btn btn-success">New Enemy Page</a>
+
+       
         
 
         <% enemyArticles.forEach(enemyArticle => { %>
-            <div class="card mt-4">
-                <div class="row " style="border: none; padding-bottom: 15px;">
-                    <div class="row col-md-4 boxlayout "  >
-                        <img src="<%= enemyArticle.picture %>" alt="...">
+          <% var subDescription = enemyArticle.Description %>
+          
+          
+            <div class="card mt-4" >
+                <div class="row " style="border: none; ">
+                    <div class="row col-md-4 boxlayout; " >
+                        <img style="vertical-align: middle;" src="<%= enemyArticle.picture %>" height="225px" alt="..." >
                     </div>
                     <div class="row col-md-8 boxlayout "  >
                         <h4 class="card-title"><%= enemyArticle.title %></h4>
                         <div class="card-subtitle text-muted mb-2" ><%= enemyArticle.createdAt.toLocaleDateString() %></div>
-                        <div class="card-text mb-2" ><%= enemyArticle.description %></div>
-                        <a href="enemies/<%= enemyArticle.slug %>" class="btn btn-primary" style="width: 150px;">Read Page</a>
+                        <div class="card-text mb-2" ><%= enemyArticle.descriptionSubstring %></div>
+                        <a href="enemies/<%= enemyArticle.slug %>" class="btn btn-primary" style="width: 150px; height: 40px;">Read Page</a>
                     </div>
                 </div>
                 

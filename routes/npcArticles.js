@@ -68,10 +68,12 @@ function saveArticleAndRedirectNPC(path){
         npcArticle.weapon = req.body.weapon
         npcArticle.inventory = req.body.inventory
         npcArticle.drops = req.body.drops
+        npcArticle.descriptionSubstring = req.body.description.substring(0, 300).concat("...");
         try{
             npcArticle = await npcArticle.save()
             res.redirect(`/npcArticles/npcs/${npcArticle.slug}`)
         }catch(e){
+            console.log(e)
             res.render('npcArticles/npcs/${path}', {npcArticle: npcArticle})
         }
     }

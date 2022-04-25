@@ -83,6 +83,7 @@ function saveArticleAndRedirectWeapon(path){
             weaponArticle = await weaponArticle.save()
             res.redirect(`/weaponArticles/weapons/${weaponArticle.slug}`)
         }catch(e){
+            console.log(e)
             res.render('weaponArticles/weapons/${path}', {weaponArticle: weaponArticle})
         }
     }

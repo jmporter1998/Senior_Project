@@ -42,8 +42,17 @@ const pageSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    descriptionSubstring: {
+        type: String
     }
 })
+
+
+
+
+
+  
 
 pageSchema.pre('validate', function(next) {
     if (this.title) {
@@ -52,5 +61,9 @@ pageSchema.pre('validate', function(next) {
 
     next()
 })
+
+
+
+
 
 module.exports = mongoose.model('enemyPage', pageSchema)

@@ -71,6 +71,7 @@ function saveArticleAndRedirectEnemy(path){
         enemyArticle.drops = req.body.drops
         enemyArticle.lore = req.body.lore
         enemyArticle.createdAt = req.body.createdAt
+        enemyArticle.descriptionSubstring = req.body.description.substring(0, 300).concat("...");
 
 
         try{
