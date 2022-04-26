@@ -10,6 +10,12 @@ router.get('/new', (req, res) => {
     res.render('articles/new', {article: new Article()})
 })
 
+router.get('/search', async (req, res) => {
+    
+    const npcArticles = await NpcArticle.find().sort({createdAt: 'descending'})
+    res.render('articles/search' , {npcArticles: npcArticles})
+})
+
 
 
 //Edit for article

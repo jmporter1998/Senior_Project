@@ -78,6 +78,60 @@
     <div class="container" style="padding-top: 15px; align-items: center;">
 
         
+        <div>
+          <% var x = 2 %>
+          <var id="searchText" >init2</var>
+          <script>
+            
+            var queryString = location.search.substring(1);
+            document.write(queryString);
+            document.getElementById("searchText").innerHTML = queryString;
+            <div>
+              
+            </div>
+          </script>
+          
+          <% npcArticles.forEach(npcArticle => { %>
+            
+            
+            <% if (npcArticle.title.includes("Solaire ")) { %>
+              <div class="card mt-4" >
+                <div class="row " style="border: none; ">
+                    <div class="row col-md-4 boxlayout "  >
+                        <img src="<%= npcArticle.picture %>" alt="..."  >
+                    </div>
+                    <div class="row col-md-8 boxlayout "  >
+                        <h4 class="card-title"><%= npcArticle.title %></h4>
+                        <div class="card-subtitle text-muted mb-2" ><%= npcArticle.createdAt.toLocaleDateString() %></div>
+                        <div class="card-text mb-2" ><%= npcArticle.descriptionSubstring %></div>
+                        <a href="npcs/<%= npcArticle.slug %>" class="btn btn-primary" style="width: 150px; height: 40px;" >Read Page</a>
+                    </div>
+                </div>
+                
+              </div>
+            <% } else if (npcArticle.description.includes("Dark ")) { %>
+              <div class="card mt-4" >
+                <div class="row " style="border: none; ">
+                    <div class="row col-md-4 boxlayout "  >
+                        <img src="<%= npcArticle.picture %>" alt="..."  >
+                    </div>
+                    <div class="row col-md-8 boxlayout "  >
+                        <h4 class="card-title"><%= npcArticle.title %></h4>
+                        <div class="card-subtitle text-muted mb-2" ><%= npcArticle.createdAt.toLocaleDateString() %></div>
+                        <div class="card-text mb-2" ><%= npcArticle.descriptionSubstring %></div>
+                        <a href="npcs/<%= npcArticle.slug %>" class="btn btn-primary" style="width: 150px; height: 40px;" >Read Page</a>
+                    </div>
+                </div>
+                
+              </div>
+            <% } else { %>
+                
+            <% } %>
+            
+        <% }) %>
+        
+          
+        </div>
         
     </div>
 
