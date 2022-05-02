@@ -18,7 +18,7 @@ router.get('/newArmour', (req, res) => {
 //Is this the problem???
 // Get for npc home
 router.get('/armours', async (req, res) => {
-    const armourArticles = await ArmourArticle.find().sort({createdAt: 'descending'})
+    const armourArticles = await ArmourArticle.find().sort({createdAt: 'ascending'})
 
     res.render('articles/armours', {armourArticles: armourArticles})
 })

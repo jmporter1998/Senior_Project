@@ -62,11 +62,22 @@
              <div class="d-flex align-items-center">
               <div class="container-fluid" style="float: right;">
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 400px;">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <input type="text" placeholder="Search" aria-label="Search" style="width: 400px;" id="searchTerm" name="searchTerm" ></input>
+                  <script>
+                    let inputElement = document.querySelector("#searchTerm");
+  
+                    inputElement.addEventListener("change", ()=>{
+                        let inputVal = document.getElementById("searchTerm").value;
+                        let anchorElement = document.querySelector(".d-flex > a");
+                        anchorElement.href = `/articles/search?val=${inputVal}`;
+                    });
+                  </script>
+                  <a href="/articles/search" class="btn btn-success" onclick="/articles/search+'?val='+val;" style="width: 100px;">Search</a>
+                  
                 </form>
               </div>
             </div>
+             
              
             <!-- Right elements -->
   

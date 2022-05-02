@@ -3,6 +3,7 @@ const Article = require('./../models/article')
 const NpcArticle = require('./../models/npcArticle')
 const WeaponArticle = require('./../models/weaponArticle')
 const ArmourArticle = require('./../models/armourArticle')
+const EnemyArticle = require('./../models/enemyArticle')
 const router = express.Router()
 
 //Get for new article
@@ -13,7 +14,11 @@ router.get('/new', (req, res) => {
 router.get('/search', async (req, res) => {
     
     const npcArticles = await NpcArticle.find().sort({createdAt: 'descending'})
-    res.render('articles/search' , {npcArticles: npcArticles})
+    const weaponArticles = await WeaponArticle.find().sort({createdAt: 'descending'})
+    const armourArticles = await ArmourArticle.find().sort({createdAt: 'descending'})
+    const enemyArticles = await EnemyArticle.find().sort({createdAt: 'descending'})
+    let myVar = req.query.val;
+    res.render('articles/search' , {npcArticles: npcArticles, weaponArticles: weaponArticles, armourArticles: armourArticles, enemyArticles: enemyArticles, myVar: myVar})
 })
 
 
